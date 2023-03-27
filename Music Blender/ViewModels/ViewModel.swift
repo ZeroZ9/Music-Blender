@@ -11,6 +11,7 @@ import MusicKit
 
 class ViewModel: ObservableObject {
     var list = [mySong]()
+    var user = [Profile]()
     @Published var songs = [Item]()
     @Published var songsApple = [Song]()
     var cityName:String?
@@ -42,6 +43,7 @@ class ViewModel: ObservableObject {
                             return mySong(id: d.documentID, artist: d["artist"] as? String ?? "hi", songTitle: d["songTitle"] as? String ?? "mlem")
                         }
                         
+                        
                         //Fetch music
                         self.fetchMusic(listne: self.list)
                     }
@@ -54,6 +56,45 @@ class ViewModel: ObservableObject {
         }
         
     }
+    
+    func getUserData() {
+        // Get a reference to the database
+        let db = Firestore.firestore()
+        
+        // Read the documents at the specific path
+        db.collection("User Profiles").getDocuments { snapshot, error in
+            // Check for errors
+            if let error = error {
+                print("Error getting user profiles: \(error.localizedDescription)")
+                return
+            }
+            
+            // No errors, handle the snapshot
+            guard let snapshot = snapshot else {
+                print("No user profiles found")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                // Map the documents to Profile objects
+                self.user = snapshot.documents.map { document in
+                    let data = document.data()
+                    let idNum = document.documentID
+                    let name = data["name"] as? String ?? ""
+                    let location = data["userLocation"] as? String ?? ""
+                    let userName = data["userName"] as? String ?? ""
+                    let password = data["password"] as? String ?? ""
+                    let genres = data["Genres"] as? [String] ?? []
+                    let artists = data["artists"] as? [String] ?? []
+                    let birthday = data["birthday"] as? String ?? ""
+                    
+                    return Profile(idNum: idNum, name: name, location: location, userName: userName, password: password, genres: genres, artists: artists, birthday: birthday)
+                }
+            }
+        }
+    }
+
+        
     
     // MARK: Fetching the data from Apple MusicKit
     

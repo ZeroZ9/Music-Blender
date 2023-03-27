@@ -110,7 +110,7 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: "person.crop.circle.fill")
                     }.sheet(isPresented: $showingUser){
-                        UserView()
+                        UserView(profile: model.user[0])
                     }
 
                     
@@ -131,6 +131,7 @@ struct ContentView: View {
                print("User is at \(city)")
                 self.model.getData(city: city )
                 self.myCity = city
+                self.model.getUserData()
             }else {
                 print("ERROR")
             }

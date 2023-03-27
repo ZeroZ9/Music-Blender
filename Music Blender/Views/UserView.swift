@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct UserView: View {
+    
+    @State var profile:Profile
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Text(profile.name ?? "")
+        }
+        
     }
 }
 
-struct UserView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserView()
-    }
-}
+
