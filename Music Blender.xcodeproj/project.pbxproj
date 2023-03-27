@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09B9DD1429D1723100177368 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B9DD1329D1723100177368 /* UserView.swift */; };
+		09B9DD1629D1745200177368 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B9DD1529D1745200177368 /* Profile.swift */; };
 		86099E9729BAF3C700F6DB5C /* SongSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86099E9629BAF3C700F6DB5C /* SongSheetView.swift */; };
 		8637D8382991EBD90005103D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8637D8372991EBD90005103D /* GoogleService-Info.plist */; };
 		8637D83B2991EC8B0005103D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8637D83A2991EC8B0005103D /* FirebaseDatabase */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09B9DD1329D1723100177368 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		09B9DD1529D1745200177368 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		86099E9629BAF3C700F6DB5C /* SongSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSheetView.swift; sourceTree = "<group>"; };
 		8637D8372991EBD90005103D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8637D8572995E2540005103D /* mySong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mySong.swift; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 				869BAD38298B1B500073D11A /* ContentView.swift */,
 				8663913229BAA6A5005A76CA /* SongTabView.swift */,
 				86099E9629BAF3C700F6DB5C /* SongSheetView.swift */,
+				09B9DD1329D1723100177368 /* UserView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -84,6 +89,7 @@
 			children = (
 				8637D8572995E2540005103D /* mySong.swift */,
 				8637D85B2995F8660005103D /* Item.swift */,
+				09B9DD1529D1745200177368 /* Profile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -220,12 +226,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				86D6428629A18DE300029FF2 /* LocationUser.swift in Sources */,
+				09B9DD1629D1745200177368 /* Profile.swift in Sources */,
 				86099E9729BAF3C700F6DB5C /* SongSheetView.swift in Sources */,
 				8637D85C2995F8660005103D /* Item.swift in Sources */,
 				869BAD39298B1B500073D11A /* ContentView.swift in Sources */,
 				8637D8582995E2540005103D /* mySong.swift in Sources */,
 				8663913329BAA6A5005A76CA /* SongTabView.swift in Sources */,
 				8637D85A2995F4D90005103D /* ViewModel.swift in Sources */,
+				09B9DD1429D1723100177368 /* UserView.swift in Sources */,
 				869BAD37298B1B500073D11A /* Music_BlenderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

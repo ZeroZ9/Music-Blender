@@ -22,6 +22,7 @@ struct ContentView: View {
     
     // MARK: isSheet for songplay
     @State private var showingSheet = false
+    @State private var showingUser = false
     
     var body: some View {
         
@@ -104,7 +105,15 @@ struct ContentView: View {
                 
                 // MARK: Profile user at Navigation
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Image(systemName: "person.crop.circle.fill")
+                    Button {
+                        showingUser.toggle()
+                    } label: {
+                        Image(systemName: "person.crop.circle.fill")
+                    }.sheet(isPresented: $showingUser){
+                        UserView()
+                    }
+
+                    
                 }
             }
         }
