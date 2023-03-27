@@ -110,10 +110,8 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: "person.crop.circle.fill")
                     }.sheet(isPresented: $showingUser){
-                        UserView(profile: model.user[0])
+                        UserView(profile: model.user[3])
                     }
-
-                    
                 }
             }
         }
